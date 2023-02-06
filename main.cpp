@@ -1,4 +1,4 @@
-// Pointers and arrays of type char  (char arrays):	Feb 2022
+// Pointers and arrays of type char  (char arrays):	Feb 2023
 
 /**
  * Demonstrates a C-style string, which is an array of char.
@@ -34,7 +34,10 @@ int main()
 
     // Print out the characters one-by-one
     int i = 0;
-    while (name[i] != '\0')		// while we have not reached the '\0'
+
+    // keep looping while we have not reached the '\0'
+    // which is the end-of-string marker.
+    while (name[i] != '\0')
     {
         cout << name[i];  // output the character
         i++;
@@ -60,10 +63,13 @@ int main()
     char buffer[40];			// temporary storage array
     char* pBuffer = buffer;		// pointer to buffer
     p = name;
+
     while (*pBuffer++ = *p++);  // yes, it's all in one line !
+
     cout << "Buffer contains: " << buffer << endl;
 
-    // The above coding is BAD practice because it is difficult to understand.
+    // The above coding is typical of older C programs but is nowadays
+    // considered BAD practice because it is difficult to understand.
 
     //*** Exercise - *************************************************************
     //    Compile run and test as you go. Study the output carefully.
