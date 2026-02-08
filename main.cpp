@@ -1,7 +1,7 @@
-// Pointers and arrays of type char  (char arrays):	Feb 2023
+// Pointers and arrays of type char  (char arrays):	Feb 2026
 
 /**
- * Demonstrates a C-style string, which is an array of char.
+ * Demonstrates a C-style string, which is an array of char (characters)
  * Using Pointers to access an array of 'char'
  *
  * NB: C-style strings in C/C++ are stored in an array of char, terminated with a null value i.e '\0'
@@ -64,7 +64,8 @@ int main()
     char* pBuffer = buffer;		// pointer to buffer
     p = name;
 
-    while (*pBuffer++ = *p++);  // yes, it's all in one line !
+    while ((*pBuffer++ = *p++)) {}
+    // yes, it's all in one line !
 
     cout << "Buffer contains: " << buffer << endl;
 
@@ -82,9 +83,8 @@ int main()
     // Remember to terminate the string with a '\0'.
     // Print out your result.
     // (Hint: Work it out on paper first.)
-
-    // a. Use array notation.
-    // b. Use pointer notation.
+    // a) Use array notation.
+    // b) Use pointer notation.
 
     return 0;
 }
