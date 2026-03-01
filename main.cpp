@@ -1,4 +1,4 @@
-// Pointers and arrays of type char  (char arrays):	Feb 2026
+// Pointers and arrays of type "char"  (char arrays):	Feb 2026
 
 /**
  * Demonstrates a C-style string, which is an array of char (characters)
@@ -16,18 +16,19 @@ using namespace std;
 int main()
 {
     char name[20] = "James";
+    // The array of 'char' is declared to be 20 characters long.
     // The char array name[] is filled with the characters 'J', 'a', ....
-    // and terminated by a null character '\0'
+    // and terminated (at the end) by a null character '\0'
     // The null escape character '\0' is added one beyond the last character in the string
     // (i.e, as the sixth character, just beyond character 's')
     // It is put there to indicate that the string ends at that point in the array,
     // and anything beyond it is not part of the string.
     // Note that there will be 'garbage' characters to the right of the right of '\0' in
-    // the name array.
+    // the name array. (garbage = any random characters)
 
     char town[] = { 'A', 'r', 'd', 'e', 'e', '\0' };
     // In this case we explicitly initialized each character, so we must put in the '\0'
-    // The size of the array will be 6 in this case.
+    // The size of the array will be 6 in this case. ( 5 characters + 1 for the '\0' )
 
     cout << name << endl;
     cout << town << endl;
@@ -40,19 +41,19 @@ int main()
     while (name[i] != '\0')
     {
         cout << name[i];  // output the character
-        i++;
+        ++i;
     }
     cout << endl;
 
-    // Print out the characters using a pointer
+    // Print out the characters by accessing each one using a pointer
     char* p;	// p is a pointer to a char
     p = name;	// name of an array is the address of first array element
                 // so, p now points at the first character ( i.e. 'J' )
 
     while (*p != '\0')	// Iterate over the characters using a pointer
     {
-        cout << *p;
-        p++;			// increment pointer by one element (one char length)
+        cout << *p;     // dereference the pointer to get a character
+        ++p;			// increment pointer by one element (one char length)
     }
     cout << endl << endl;
 
